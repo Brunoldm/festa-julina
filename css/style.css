@@ -302,6 +302,25 @@ body {
   margin: 8px 0 0;
 }
 
+.aviso-bebida {
+  display: inline-block;
+  margin-top: 14px;
+  background: linear-gradient(135deg, #F5A623, #C45A00);
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.04em;
+  padding: 10px 28px;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(196,90,0,0.45);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 6px 20px rgba(196,90,0,0.45); }
+  50%       { transform: scale(1.05); box-shadow: 0 10px 28px rgba(196,90,0,0.6); }
+}
+
 /* ── Badge admin ────────────────────────────────────────────────── */
 .admin-badge {
   display: inline-block;
