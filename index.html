@@ -69,6 +69,7 @@
       <!-- Título -->
       <h1 class="titulo-festa">Festa Julina</h1>
       <p class="subtitulo-festa">na Casa da Tia Maria</p>
+      <p class="frase-festa">"Eita! Esse arraiá vai se bão demais sô! Vista seu traje caipira e venha se divertir!"</p>      
 
       <!-- Divisor -->
       <div class="divisor">
@@ -109,5 +110,35 @@
     </div>
   </main>
 
+ <!-- Player de música -->
+<div id="music-player">
+  <audio id="audio" loop>
+    <source src="audio/ronaldoreyz-hoje-eu-estou-feliz-instrumental-de-festa-junina-527904.mp3" type="audio/mpeg"/>
+  </audio>
+  <button id="btn-music" onclick="toggleMusic()" title="Música">
+    🎵
+  </button>
+</div>
+
+<script>
+  const audio   = document.getElementById("audio");
+  const btnMusic = document.getElementById("btn-music");
+
+  // Tenta tocar automaticamente ao carregar
+  window.addEventListener("click", function iniciarAuto() {
+    audio.play().catch(() => {});
+    window.removeEventListener("click", iniciarAuto);
+  }, { once: true });
+
+  function toggleMusic() {
+    if (audio.paused) {
+      audio.play();
+      btnMusic.textContent = "🔇";
+    } else {
+      audio.pause();
+      btnMusic.textContent = "🎵";
+    }
+  }
+</script> 
 </body>
 </html>

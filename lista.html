@@ -101,9 +101,18 @@
   </main>
 
   <!-- Rodapé -->
-  <footer class="lista-footer">
-    Festa Julina · Casa da Dona Maria · 25 de Julho de 2026
-  </footer>
+<footer class="lista-footer">
+  Festa Julina · Casa da Dona Maria · 25 de Julho de 2026
+  <br/>
+  <span style="opacity:1; margin-top:6px; display:inline-block;">
+    Reservou errado? Fale com o Bruno:
+    <a href="https://wa.me/5515998409115"
+       target="_blank"
+       style="color:var(--laranja); font-weight:700; text-decoration:none;">
+      (15) 99840-9115
+    </a>
+  </span>
+</footer>
 
   <!-- ── Modal: adicionar item ──────────────────────────────────────── -->
   <div id="modal" class="modal-overlay hidden" onclick="fecharModalOverlay(event)">
@@ -138,5 +147,35 @@
   <script type="module" src="js/firebase.js"></script>
   <script type="module" src="js/lista.js"></script>
 
+  <!-- Player de música -->
+<div id="music-player">
+  <audio id="audio" loop>
+    <source src="audio/ronaldoreyz-hoje-eu-estou-feliz-instrumental-de-festa-junina-527904.mp3" type="audio/mpeg"/>
+  </audio>
+  <button id="btn-music" onclick="toggleMusic()" title="Música">
+    🎵
+  </button>
+</div>
+
+<script>
+  const audio   = document.getElementById("audio");
+  const btnMusic = document.getElementById("btn-music");
+
+  // Tenta tocar automaticamente ao carregar
+  window.addEventListener("click", function iniciarAuto() {
+    audio.play().catch(() => {});
+    window.removeEventListener("click", iniciarAuto);
+  }, { once: true });
+
+  function toggleMusic() {
+    if (audio.paused) {
+      audio.play();
+      btnMusic.textContent = "🔇";
+    } else {
+      audio.pause();
+      btnMusic.textContent = "🎵";
+    }
+  }
+</script>
 </body>
 </html>
