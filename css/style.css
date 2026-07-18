@@ -222,7 +222,7 @@ body {
 .btn-maps {
   display: inline-block;
   margin-top: 16px;
-  background: linear-gradient(135deg, #2a9d8f, #1a6b60);
+  background: linear-gradient(135deg, #b2c70f, #b8c11c);
   color: #fff;
   text-decoration: none;
   font-weight: 700;
@@ -230,7 +230,7 @@ body {
   letter-spacing: 0.04em;
   padding: 13px 32px;
   border-radius: 50px;
-  box-shadow: 0 6px 22px rgba(42,157,143,0.45);
+  box-shadow: 0 6px 22px rgba(194, 214, 11, 0.45);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .btn-maps:hover {
