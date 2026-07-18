@@ -209,6 +209,15 @@ body {
   letter-spacing: 0.02em;
 }
 
+.info-pill-link {
+  text-decoration: none;
+  color: var(--creme);
+  transition: background 0.2s, border-color 0.2s;
+}
+.info-pill-link:hover {
+  background: rgba(245,166,35,0.25);
+  border-color: rgba(245,166,35,0.5);
+}
 /* ── Botão CTA principal ────────────────────────────────────────── */
 .btn-cta {
   display: inline-block;
